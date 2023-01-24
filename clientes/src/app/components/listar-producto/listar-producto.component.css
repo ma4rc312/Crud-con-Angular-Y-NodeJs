@@ -1,0 +1,64 @@
+section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: cover;
+    background-position: center;
+    background-attachment: fixed;
+    padding: 50px;
+  }
+  .container{
+    position: relative;
+    width: calc(100% - 100px);
+    min-height: calc(100vh - 200px);
+    min-height:300px;
+    background: rgba(255, 255, 255, 0.355);
+    box-shadow: 0 15px 35px rgb(255, 255, 255, 0.05);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    padding: 50px;
+  }
+  header{
+    position: absolute;
+    top: -40px;
+    right: 20px;
+    left: 20px;
+    padding: 20px 50px;
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
+  }
+ 
+  .img img{
+    max-width: 500px;
+    animation: animate 3.5s linear infinite;
+  }
+  @keyframes animate{
+    0%, 100%
+    {
+      transform: translateY(25px);
+    }
+    50%{
+      transform: translateY(50px);
+    }
+  }
+  
+  .copy{
+    position: absolute;
+    bottom: 20px;
+    left: 50px;
+    color: #8a2435;
+  }
+
+  .fas {
+    cursor: pointer;
+    margin-left: 7px;
+  }

@@ -1,0 +1,47 @@
+<section>
+    
+    <div class="container">
+      <header>
+        <div class="card-body text-center">
+            <span class="titulo">LISTADO DE PRODUCTOS</span>
+            <button class="button btn btn-success float-end" routerLink="/crear-producto">NUEVO</button>
+            </div>
+      </header>
+
+      <table *ngIf="listProductos.length > 0" class="table table-responsive ">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Producto</th>
+            <th scope="col">Categoria</th>
+            <th scope="col">Ubicacion</th>
+            <th scope="col">Precio</th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let producto of listProductos">
+            <!-- <th scope="row">{{ producto._id }}</th> -->
+            <td></td>
+            <td>{{ producto.nombre }}</td>
+            <td>{{ producto.categoria}}</td>
+            <td>{{ producto.ubicacion }}</td>
+            <td>{{ producto.precio | currency: 'USD' }}</td>
+            <td>
+                <i [routerLink]="['/editar-producto',producto._id ]" class="fas fa-edit text-primary"></i>
+                <i (click)="eliminarProducto(producto._id)" class="fas fa-trash text-danger"></i>
+            </td>
+
+          </tr>
+        </tbody>
+      </table>
+
+      <h5 style="text-align: start; margin-top: 10px;" *ngIf="listProductos.length == 0">No hay productos para mostrar</h5>
+
+      <div class="img">
+       <!-- <! <img src="https://o.remove.bg/downloads/3b97bc09-d450-4850-9077-c391bcde81fe/image-5-1024x677-removebg-preview.png"> -->
+      </div>
+      <p class="copy">@Marce lucio</p>
+    </div>
+  </section>
+
